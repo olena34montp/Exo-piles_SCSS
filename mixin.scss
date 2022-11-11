@@ -1,0 +1,32 @@
+@mixin reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin flex ($display, $flex-wrap, $justify-content) {
+    display: $display;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+}
+
+@mixin size ($width-s, $hight-s) {
+    width: $width-s;
+    height: $hight-s;
+}
+
+@mixin position ($absolute: false) {
+    @if $absolute != false {
+        position: absolute;
+    } @else {
+        position: relative;
+    }
+}
+
+@mixin position-coordinates ($top, $right, $bottom, $left) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}

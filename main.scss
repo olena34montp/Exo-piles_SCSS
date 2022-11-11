@@ -1,0 +1,79 @@
+@use "variables";
+@use "mixin";
+
+* {
+    @include mixin.reset (true);
+}
+
+main {
+    @include mixin.flex (flex, wrap, space-between);
+    width: calc(variables.$size * 3);
+    margin: 0 auto;
+}
+
+ul {
+    @include mixin.position (false);
+    width: calc(variables.$size * 1.5);
+    height: calc(variables.$size * 1.5);
+    li {
+        @include mixin.position (true);
+        @include mixin.size (variables.$size, variables.$size);
+    }
+    .item-1 {
+        background: variables.$primary-color;
+    }
+    .item-2 {
+        background: variables.$secondary-color;
+    }
+    .item-3 {
+        background: variables.$tertiary-color;
+    }
+}
+
+.list-1 {
+    .item-1 {
+        @include mixin.position-coordinates (0, auto, auto, 0);
+    }
+    .item-2 {
+        @include mixin.position-coordinates (variables.$indentation-s, auto, auto, variables.$indentation-s);
+    }
+    .item-3 {
+        @include mixin.position-coordinates (calc(variables.$indentation-s * 2), auto, auto, calc(variables.$indentation-s * 2));
+    }
+}
+
+.list-2 {
+    .item-1 {
+        @include mixin.position-coordinates (0, 0, auto, auto);
+    }
+    .item-2 {
+        @include mixin.position-coordinates (variables.$indentation-s, variables.$indentation-s, auto, auto);
+    }
+    .item-3 {
+        @include mixin.position-coordinates (calc(variables.$indentation-s * 2), calc(variables.$indentation-s * 2), auto, auto);
+    }
+}
+
+.list-3 {
+    .item-1 {
+        @include mixin.position-coordinates (auto, auto, 0, 0);
+    }
+    .item-2 {
+        @include mixin.position-coordinates (auto, auto, variables.$indentation-s, variables.$indentation-s);
+    }
+    .item-3 {
+        @include mixin.position-coordinates (auto, auto, calc(variables.$indentation-s * 2), calc(variables.$indentation-s * 2));
+    }
+}
+
+.list-4 {
+    .item-1 {
+        @include mixin.position-coordinates (auto, 0, 0, auto);
+    }
+    .item-2 {
+        @include mixin.position-coordinates (auto, variables.$indentation-s, variables.$indentation-s, auto);
+    }
+    .item-3 {
+        @include mixin.position-coordinates (auto, calc(variables.$indentation-s * 2), calc(variables.$indentation-s * 2), auto);
+    }
+}

@@ -1,0 +1,113 @@
+/* Colors */
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 600px;
+  margin: 0 auto;
+}
+
+ul {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+ul li {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+ul .item-1 {
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+}
+ul .item-2 {
+  background: linear-gradient(90deg, rgb(131, 58, 180) 0%, rgb(220, 29, 253) 50%, rgb(252, 176, 69) 100%);
+}
+ul .item-3 {
+  background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%);
+}
+
+.list-1 .item-1 {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+.list-1 .item-2 {
+  top: 40px;
+  right: auto;
+  bottom: auto;
+  left: 40px;
+}
+.list-1 .item-3 {
+  top: 80px;
+  right: auto;
+  bottom: auto;
+  left: 80px;
+}
+
+.list-2 .item-1 {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+.list-2 .item-2 {
+  top: 40px;
+  right: 40px;
+  bottom: auto;
+  left: auto;
+}
+.list-2 .item-3 {
+  top: 80px;
+  right: 80px;
+  bottom: auto;
+  left: auto;
+}
+
+.list-3 .item-1 {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+}
+.list-3 .item-2 {
+  top: auto;
+  right: auto;
+  bottom: 40px;
+  left: 40px;
+}
+.list-3 .item-3 {
+  top: auto;
+  right: auto;
+  bottom: 80px;
+  left: 80px;
+}
+
+.list-4 .item-1 {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto;
+}
+.list-4 .item-2 {
+  top: auto;
+  right: 40px;
+  bottom: 40px;
+  left: auto;
+}
+.list-4 .item-3 {
+  top: auto;
+  right: 80px;
+  bottom: 80px;
+  left: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

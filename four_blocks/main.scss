@@ -1,0 +1,67 @@
+@use "variables";
+@use "mixin";
+
+* {
+    @include mixin.reset;
+}
+
+ul {
+    @include mixin.position (false);
+    @include mixin.size (calc(variables.$size * 3), calc(variables.$size * 3));
+    margin: 0 auto;
+    li {
+        @include mixin.position (true);
+        @include mixin.size (variables.$size, variables.$size);
+        background: variables.$primary-color;
+        &::before {
+            @include mixin.pseudo-element;
+            @include mixin.position (true);
+            background: variables.$secondary-color;
+        }
+        &::after {
+            @include mixin.pseudo-element;
+            @include mixin.position (true);
+            background: variables.$tertiary-color;
+        }
+    }
+}
+
+.item-1 {
+    @include mixin.position-coordinates (0, auto, auto, 0);
+    &::before {
+        @include mixin.position-coordinates (variables.$indentation-s, auto, auto, variables.$indentation-s);
+    }
+    &::after {
+        @include mixin.position-coordinates (calc(variables.$indentation-s * 2), auto, auto, calc(variables.$indentation-s * 2));
+    }
+}
+
+.item-2 {
+    @include mixin.position-coordinates (0, 0, auto, auto);
+    &::before {
+        @include mixin.position-coordinates (variables.$indentation-s, variables.$indentation-s, auto, auto);
+    }
+    &::after {
+        @include mixin.position-coordinates (calc(variables.$indentation-s * 2), calc(variables.$indentation-s * 2), auto, auto);
+    }
+}
+
+.item-3 {
+    @include mixin.position-coordinates (auto, 0, 0, auto);
+    &::before {
+        @include mixin.position-coordinates (auto, variables.$indentation-s, variables.$indentation-s, auto);
+    }
+    &::after {
+        @include mixin.position-coordinates (auto, calc(variables.$indentation-s * 2), calc(variables.$indentation-s * 2), auto);
+    }
+}
+
+.item-4 {
+    @include mixin.position-coordinates (auto, auto, 0, 0);
+    &::before {
+        @include mixin.position-coordinates (auto, auto, variables.$indentation-s, variables.$indentation-s);
+    }
+    &::after {
+        @include mixin.position-coordinates (auto, auto, calc(variables.$indentation-s * 2), calc(variables.$indentation-s * 2));
+    }
+}

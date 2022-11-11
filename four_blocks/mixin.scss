@@ -1,0 +1,33 @@
+@mixin reset ($reset: true) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin size ($width-s, $height-s) {
+    width: $width-s;
+    height: $height-s;
+}
+
+@mixin position ($absolute: false) {
+    @if $absolute != false {
+        position: absolute;
+    } @else {
+        position: relative;
+    }   
+}
+
+@mixin position-coordinates ($top, $right, $bottom, $left) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin pseudo-element {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
